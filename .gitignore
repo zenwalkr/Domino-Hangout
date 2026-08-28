@@ -1,0 +1,10 @@
+# Runtime SQLite database and journaling files
+domino.sqlite
+domino.sqlite-wal
+domino.sqlite-shm
+
+# Local/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
