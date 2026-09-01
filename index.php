@@ -2583,6 +2583,7 @@ function playSound(type) {
 }
 
 function triggerHaptic() { if (navigator.vibrate) navigator.vibrate(25); }
+function triggerTurnHaptic() { if (navigator.vibrate) navigator.vibrate(120); }
 
 function showToast(msg) {
     const t = qs('#toast');
@@ -4009,7 +4010,7 @@ async function poll() {
             }
             if (prevTilesCount > 0 && newTileCount > prevTilesCount) playSound('play');
             if (prevTurn && prevTurn !== state.turnPlayerId && state.turnPlayerId === (state.players.find(p=>p.isMe)?.id)) {
-                playSound('turn'); triggerHaptic();
+                playSound('turn'); triggerTurnHaptic();
             }
         } else if (res && !res.ok) {
             leaveTable(); showToast("Game session expired."); return; 
